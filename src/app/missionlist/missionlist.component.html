@@ -1,0 +1,14 @@
+<h1>SpaceX Mission Launch List</h1>
+<label for="search-year">Search or filter by year of launch:</label>
+<input type="text" [(ngModel)]="year" name="search-year">
+<button (click)="searchMission()">Search</button>
+
+<ul>
+    <li *ngFor="let launch of launches">
+      <img src="{{ launch.links.mission_patch_small }}" alt="Mission Patch">
+      {{ launch.mission_name }}
+      {{ launch.launch_year }}
+      {{ launch.details }}
+      <hr>
+    </li>
+  </ul>
